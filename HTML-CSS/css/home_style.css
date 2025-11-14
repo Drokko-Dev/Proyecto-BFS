@@ -89,10 +89,12 @@ body {
   flex-direction: column;
   height: 100%;
   gap: 2rem;
+
   li {
     padding: 0.75rem 0.5rem;
     border-radius: 0.5rem;
-    transition: all 0.2s;
+    transition: scale 0.2s;
+
     a {
       display: flex;
       align-items: center;
@@ -100,6 +102,7 @@ body {
       text-decoration: none;
       color: var(--secondary);
       font-size: 1.4rem;
+      transition: font-size 0.15s ease 0.15s;
     }
     &:hover {
       background-color: var(--background-primary-selected);
