@@ -211,6 +211,9 @@ body {
     border-top: 1px solid var(--border-dark);
   }
 }
+.side-navbar-none .toggle-btn {
+  rotate: 180deg;
+}
 
 .side-navbar-show,
 .side-navbar-none {
