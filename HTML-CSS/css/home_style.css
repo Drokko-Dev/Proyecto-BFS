@@ -1,17 +1,215 @@
 * {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
 }
 
 :root {
-    --primary: "#359EFF"; 
-    --background-light: "#f5f7f8";
-    --background-dark: "#0f1923"; 
-    --surface-dark: "#182832";
-    --border-dark: "#325567";
-    --text-secondary-dark: "#92b7c9";
-    --high-priority: "#F5A623";
-    --medium-priority: "#4A90E2";
-     --low-priority: "#7ED321";
+  --primary-1: white;
+  --primary-2: #359eff;
+  --secondary: #d1d5db;
+  --background-primary-selected: #359dff33;
+  --background-light: #f5f7f8;
+  --background-dark: #0f1923;
+  --surface-dark: #182832;
+  --border-dark: #325567;
+  --text-secondary-dark: #92b7c9;
+  --high-priority: #f5a623;
+  --medium-priority: #4a90e2;
+  --low-priority: #7ed321;
+}
+
+body {
+  display: flex;
+  background-color: var(--background-dark);
+  color: var(--primary-1);
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 0rem;
+  right: 0px; /* sobresale un poquito hacia afuera */
+  background: none;
+  color: var(--secondary);
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.toggle-btn:hover {
+  background-color: var(--primary-2);
+  border-radius: 0.5rem;
+}
+
+/* barra de navegacion lateral mostrada */
+
+.side-navbar-show {
+  position: relative;
+  width: 20rem;
+  height: 100vh;
+  padding: 1rem;
+  background-color: var(--surface-dark);
+  border-right: 2px solid var(--border-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.side-navbar-show .logo {
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-areas:
+    "logo title"
+    "logo texto";
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  img {
+    grid-area: logo;
+    margin-right: 1rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  h1 {
+    grid-area: title;
+    font-size: 1.5rem;
+  }
+  span {
+    grid-area: texto;
+    font-size: 0.9rem;
+    align-self: start;
+    color: var(--text-secondary-dark);
+  }
+}
+
+.side-navbar-show .nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 2rem;
+  li {
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--secondary);
+      font-size: 1.4rem;
+    }
+    &:hover {
+      background-color: var(--background-primary-selected);
+      scale: 1.07;
+      a {
+        color: var(--primary-2);
+      }
+    }
+  }
+
+  li:first-child {
+    background-color: var(--background-primary-selected);
+    padding: 1rem 0.5rem;
+    a {
+      color: var(--primary-2);
+    }
+    &:hover {
+      scale: 1;
+      a {
+        pointer-events: none;
+      }
+    }
+  }
+  li:last-child {
+    margin-top: auto;
+    border-top: 1px solid var(--border-dark);
+  }
+}
+
+/* barra de navegacion lateral oculta */
+
+.side-navbar-none {
+  position: relative;
+  width: 6rem;
+  height: 100vh;
+  padding: 1rem;
+  background-color: var(--surface-dark);
+  border-right: 2px solid var(--border-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.side-navbar-none .logo {
+  /* border: 1px solid red; */
+  img {
+    grid-area: logo;
+    margin-right: 1rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  h1 {
+    display: none;
+  }
+  span {
+    display: none;
+  }
+}
+
+.side-navbar-none .nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 2rem;
+  li {
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* <-- aquí se centra el ícono */
+      width: 100%;
+      gap: 0;
+      text-decoration: none;
+      color: var(--secondary);
+      font-size: 0; /* el texto NO se verá */
+      text-align: center;
+    }
+    &:hover {
+      background-color: var(--background-primary-selected);
+      scale: 1.07;
+      a {
+        color: var(--primary-2);
+      }
+    }
+  }
+
+  li:first-child {
+    background-color: var(--background-primary-selected);
+    padding: 1rem 0.5rem;
+    a {
+      color: var(--primary-2);
+    }
+    &:hover {
+      scale: 1;
+      a {
+        pointer-events: none;
+      }
+    }
+  }
+  li:last-child {
+    margin-top: auto;
+    border-top: 1px solid var(--border-dark);
+  }
+}
+
+.side-navbar-show,
+.side-navbar-none {
+  transition: width 0.3s ease, padding 0.3s ease;
 }
