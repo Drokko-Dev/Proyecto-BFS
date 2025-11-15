@@ -7,12 +7,13 @@
 
 :root {
   --primary-1: white;
-  --primary-2: #359eff;
+  --primary-2: #2badee; /*  color antiguo #359eff */
   --secondary: #d1d5db;
   --background-primary-selected: #359dff33;
+  --background-primary-selected-op02: #359dff10;
   --background-light: #f5f7f8;
   --background-dark: #0f1923;
-  --surface-dark: #182832;
+  --surface-dark: #182832; /* otra opcion #111c22 */
   --border-dark: #325567;
   --text-secondary-dark: #92b7c9;
   --high-priority: #f5a623;
@@ -92,7 +93,7 @@ body {
 
   li {
     padding: 0.75rem 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     transition: scale 0.2s;
 
     a {
@@ -109,15 +110,25 @@ body {
       scale: 1.07;
       a {
         color: var(--primary-2);
+        font-weight: 600;
       }
     }
   }
 
-  li:first-child {
-    background-color: var(--background-primary-selected);
-    padding: 1rem 0.5rem;
+  .create-ticket {
+    background-color: var(--background-primary-selected-op02);
+    border-radius: 50px;
     a {
       color: var(--primary-2);
+    }
+  }
+
+  .selected {
+    background-color: var(--background-primary-selected);
+    padding: 0.9rem 0.5rem;
+    a {
+      color: var(--primary-2);
+      font-weight: 700;
     }
     &:hover {
       scale: 1;
@@ -189,21 +200,30 @@ body {
       scale: 1.07;
       a {
         color: var(--primary-2);
+        font-weight: 600;
       }
     }
   }
 
-  li:first-child {
+  .selected {
     background-color: var(--background-primary-selected);
     padding: 1rem 0.5rem;
     a {
       color: var(--primary-2);
+      font-weight: 700;
     }
     &:hover {
       scale: 1;
       a {
         pointer-events: none;
       }
+    }
+  }
+  .create-ticket {
+    background-color: var(--background-primary-selected-op02);
+    border-radius: 40px;
+    a {
+      color: var(--primary-2);
     }
   }
   li:last-child {
