@@ -132,8 +132,10 @@ body {
     }
     &:hover {
       scale: 1;
+
       a {
         pointer-events: none;
+        font-weight: 700;
       }
     }
   }
@@ -216,6 +218,7 @@ body {
       scale: 1;
       a {
         pointer-events: none;
+        font-weight: 700;
       }
     }
   }
@@ -241,14 +244,21 @@ body {
 }
 
 /* Estilos del navbar */
+
+.main-content {
+  height: 100vh;
+  flex: 1;
+}
+
 header {
   width: 100%;
-  height: 100%;
+  height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
   background-color: var(--surface-dark);
+  border-bottom: 1px solid var(--border-dark);
 
   h1 {
     font-size: 1.8rem;
@@ -286,7 +296,7 @@ header {
     }
   }
 
-  .search-box a:first-of-type {
+  #open-modal {
     margin-left: 20px;
     width: 40px;
     height: 40px;
@@ -320,10 +330,57 @@ header {
   }
 }
 
-/* Ensure main content grows to fill remaining space beside the sidebar
-   so header (width:100%) actually spans available area. */
-.header-content {
-  flex: 1;
-  height: 5rem;
-  border-bottom: 1px solid var(--border-dark);
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.main-header {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+  background-color: var(--surface-dark);
+
+  .alert {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    span {
+      color: var(--text-secondary-dark);
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      color: var(--text-secondary-dark);
+    }
+    button {
+      margin-top: 1rem;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--background-primary-selected);
+      border: none;
+      border-radius: 10px;
+      color: var(--primary-1);
+      cursor: pointer;
+      width: 30%;
+      transition: scale 0.2s;
+      &:hover {
+        background-color: var(--primary-2);
+        scale: 1.05;
+      }
+    }
+  }
+
+  img {
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
 }

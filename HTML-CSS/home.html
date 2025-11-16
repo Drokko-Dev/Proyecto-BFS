@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/home_style.css" type="text/css" />
+    <link rel="stylesheet" href="./css/home_style_modal.css" type="text/css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
@@ -201,8 +202,9 @@
       </ul>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="header-content">
+    <!-- Header CONTENT -->
+    <div class="main-content">
+      <!-- header content -->
       <header>
         <h1>Panel de Tickets</h1>
         <div class="search-box">
@@ -225,7 +227,7 @@
             </svg>
           </button>
           <input type="text" placeholder="Busca ticket..." />
-          <a href="">
+          <button id="open-modal">
             <!-- SVG normal -->
             <svg
               class="bell-icon default"
@@ -261,25 +263,73 @@
               />
               <path
                 d="M12 2c1.358 0 2.506 .903 2.875 2.141l.046 .171l.008 .043a8.013 8.013 0 0 1 4.024 6.069l.028 .287l.019 .289v2.931l.021 .136a3 3 0 0 0 1.143 1.847l.167 .117l.162 .099c.86 .487 .56 1.766 -.377 1.864l-.116 .006h-16c-1.028 0 -1.387 -1.364 -.493 -1.87a3 3 0 0 0 1.472 -2.063l.021 -.143l.001 -2.97a8 8 0 0 1 3.821 -6.454l.248 -.146l.01 -.043a3.003 3.003 0 0 1 2.562 -2.29l.182 -.017l.176 -.004z"
-              /></svg
-          ></a>
+              />
+            </svg>
+          </button>
           <a href=""
             ><img src="./images/perfil_demo.png" alt="profile picture"
           /></a>
         </div>
       </header>
+
+      <!-- Modal de Alertas -->
+
+      <div class="modal-alerta">
+        <div class="modal-content">
+          <span class="close-button"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" /></svg
+          ></span>
+          <h2>Alertas</h2>
+          <ul>
+            <li>Tienes 3 nuevos tickets sin asignar.</li>
+            <li>Ticket de alta prioridad #1025 fue actualizado.</li>
+            <li>El ticket #1018 ha sido cerrado.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- main content -->
+      <main>
+        <div class="main-header">
+          <div class="alert">
+            <span>Alertas</span>
+            <h1>Tienes 3 nuevos tickets sin asignar</h1>
+            <p>Ticket de alta prioridad #1025 fue actualizado.</p>
+            <button>Ver</button>
+          </div>
+          <img src="./images/perfil_demo.png" alt="" />
+        </div>
+        <section>
+          <div class="new">
+            <h1>Nuevos</h1>
+          </div>
+          <div class="in-progress">
+            <h1>En Progreso</h1>
+          </div>
+          <div class="close">
+            <h1>Completados</h1>
+          </div>
+        </section>
+      </main>
     </div>
 
     <!-- scripts -->
 
-    <script>
-      const btn = document.getElementById("toggleSidebar");
-      const sidebar = document.getElementById("sidebar");
-
-      btn.addEventListener("click", () => {
-        sidebar.classList.toggle("side-navbar-show");
-        sidebar.classList.toggle("side-navbar-none");
-      });
-    </script>
+    <script type="module" src="../JavaScript/home.js"></script>
+    <script type="module" src="../JavaScript/home_modal.js"></script>
   </body>
 </html>
