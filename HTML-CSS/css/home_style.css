@@ -19,6 +19,7 @@
   --high-priority: #f5a623;
   --medium-priority: #4a90e2;
   --low-priority: #7ed321;
+  --background-red: #ff35351f;
 }
 
 body {
@@ -47,7 +48,7 @@ body {
 
 .side-navbar-show {
   position: relative;
-  width: 20rem;
+  width: 16.5rem;
   height: 100vh;
   padding: 1rem;
   background-color: var(--surface-dark);
@@ -68,8 +69,8 @@ body {
   img {
     grid-area: logo;
     margin-right: 1rem;
-    width: 60px;
-    height: 60px;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
   }
   h1 {
@@ -142,6 +143,12 @@ body {
   li:last-child {
     margin-top: auto;
     border-top: 1px solid var(--border-dark);
+    &:hover {
+      background-color: var(--background-red);
+      a {
+        color: red;
+      }
+    }
   }
 }
 
@@ -160,12 +167,13 @@ body {
 }
 
 .side-navbar-none .logo {
-  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   img {
-    grid-area: logo;
-    margin-right: 1rem;
-    width: 60px;
-    height: 60px;
+    width: 3.6rem;
+    height: 3.6rem;
     border-radius: 50%;
   }
   h1 {
@@ -232,6 +240,13 @@ body {
   li:last-child {
     margin-top: auto;
     border-top: 1px solid var(--border-dark);
+
+    &:hover {
+      background-color: var(--background-red);
+      a {
+        color: red;
+      }
+    }
   }
 }
 .side-navbar-none .toggle-btn {
@@ -334,7 +349,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem;
+  padding: 3rem;
 }
 
 .main-header {
@@ -382,5 +397,43 @@ main {
     width: 400px;
     border-radius: 10px;
     object-fit: cover;
+  }
+}
+
+.filter {
+  border-radius: 10px;
+  display: flex;
+  gap: 1rem;
+
+  select {
+    padding: 0.8rem 1rem;
+    width: 8.5rem;
+    height: 3rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--surface-dark);
+    color: var(--primary-1);
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  button {
+    margin-left: auto;
+    padding: 0.8rem 1rem;
+    height: 3rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--primary-2);
+    color: var(--primary-1);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, scale 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    &:hover {
+      background-color: #2b9edc;
+      scale: 1.05;
+    }
   }
 }
