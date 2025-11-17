@@ -8,6 +8,17 @@ html {
   }
 }
 
+@media (max-width: 1500px) {
+  html {
+    font-size: 13px;
+  }
+  .tickets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 1400px) {
   html {
     font-size: 12px;
