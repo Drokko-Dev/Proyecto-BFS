@@ -3,42 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Estilos para todas las paginas -->
-    <link rel="stylesheet" href="./css/shared/style_body.css" type="text/css" />
+    <link rel="stylesheet" href="./css/home_style.css" type="text/css" />
+    <link rel="stylesheet" href="./css/home_style_modal.css" type="text/css" />
     <link
       rel="stylesheet"
-      href="./css/shared/style_modal.css"
+      href="./css/home_style_responsive.css"
       type="text/css"
     />
-    <link
-      rel="stylesheet"
-      href="./css/shared/style_responsive.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="./css/shared/style_sidebar.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="./css/shared/style_navbar.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="./css/shared/style_profile_options.css"
-      type="text/css"
-    />
-
-    <!-- Estilos especificos para esta pagina HOME -->
-    <link
-      rel="stylesheet"
-      href="./css/pages/home/home_main.css"
-      type="text/css"
-    />
-
-    <!-- Fuentes de texto -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
@@ -79,8 +50,8 @@
         <span>Gestor de Tickets</span>
       </div>
       <ul class="nav-links">
-        <li class="selected">
-          <a href="">
+        <li>
+          <a href="./home.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -101,8 +72,8 @@
             >Inicio</a
           >
         </li>
-        <li>
-          <a href="./ticket.html">
+        <li class="selected">
+          <a href="tickets.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -240,7 +211,7 @@
     <div class="header-content">
       <!-- header content -->
       <header>
-        <h1>Panel de Tickets</h1>
+        <h1>Bandeja de Entrada de Tickets</h1>
         <div class="search-box">
           <button>
             <svg
@@ -421,126 +392,12 @@
             >Crear Nuevo Ticket
           </button>
         </div>
-
-        <section class="tickets">
-          <div class="new ticket">
-            <h1>Nuevos</h1>
-            <article>
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="alta">Alta</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-
-            <article>
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="media">Media</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-
-            <article>
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="baja">Baja</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-          </div>
-          <div class="in-progress ticket">
-            <h1>En Progreso</h1>
-            <article>
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="alta">Alta</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-
-            <article>
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="media">Media</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-
-            <article>
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="baja">Baja</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-          </div>
-          <div class="close ticket">
-            <h1>Completados</h1>
-
-            <article>
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="alta">Alta</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-
-            <article>
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="media">Media</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-          </div>
-        </section>
       </main>
     </div>
 
     <!-- scripts -->
 
-    <script type="module" src="../JavaScript/home_sidebar.js"></script>
+    <script type="module" src="../JavaScript/home.js"></script>
     <script type="module" src="../JavaScript/home_modal.js"></script>
     <script type="module" src="../JavaScript/profile_modal.js"></script>
   </body>
