@@ -1,0 +1,235 @@
+.toggle-btn {
+  position: absolute;
+  top: 0rem;
+  right: 0px; /* sobresale un poquito hacia afuera */
+  background: none;
+  color: var(--secondary);
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.toggle-btn:hover {
+  background-color: var(--primary-2);
+  border-radius: 0.5rem;
+}
+
+/* barra de navegacion lateral mostrada */
+
+.side-navbar-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  --sidebar-width: 16.5rem;
+  width: var(--sidebar-width);
+  height: 100vh;
+  padding: 1rem;
+  background-color: var(--surface-dark);
+  border-right: 1px solid var(--border-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.side-navbar-show .logo {
+  display: grid;
+  grid-template-areas:
+    "logo title"
+    "logo texto";
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  img {
+    grid-area: logo;
+    margin-right: 1rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+  }
+  h1 {
+    grid-area: title;
+    font-size: 1.5rem;
+  }
+  span {
+    grid-area: texto;
+    font-size: 0.9rem;
+    align-self: start;
+    color: var(--text-secondary-dark);
+  }
+}
+
+.side-navbar-show .nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 2rem;
+
+  li {
+    padding: 0.75rem 0.5rem;
+    border-radius: 1rem;
+    transition: scale 0.2s;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--secondary);
+      font-size: 1.4rem;
+      transition: font-size 0.15s ease 0.15s;
+    }
+    &:hover {
+      background-color: var(--background-primary-selected);
+      scale: 1.07;
+      a {
+        color: var(--primary-2);
+        font-weight: 600;
+      }
+    }
+  }
+
+  .create-ticket {
+    background-color: var(--background-primary-selected-op02);
+    border-radius: 50px;
+    a {
+      color: var(--primary-2);
+    }
+  }
+
+  .selected {
+    background-color: var(--background-primary-selected);
+    padding: 0.9rem 0.5rem;
+    a {
+      color: var(--primary-2);
+      font-weight: 700;
+    }
+    &:hover {
+      scale: 1;
+
+      a {
+        pointer-events: none;
+        font-weight: 700;
+      }
+    }
+  }
+  li:last-child {
+    margin-top: auto;
+    border-top: 1px solid var(--border-dark);
+    &:hover {
+      background-color: var(--background-red);
+      a {
+        color: red;
+      }
+    }
+  }
+}
+
+/* barra de navegacion lateral oculta */
+
+.side-navbar-none {
+  position: fixed;
+  top: 0;
+  left: 0;
+  --sidebar-width: 6rem;
+  width: var(--sidebar-width);
+  height: 100vh;
+  padding: 1rem;
+  background-color: var(--surface-dark);
+  border-right: 2px solid var(--border-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.side-navbar-none .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+  }
+  h1 {
+    display: none;
+  }
+  span {
+    display: none;
+  }
+}
+
+.side-navbar-none .nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 2rem;
+  li {
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* <-- aquí se centra el ícono */
+      width: 100%;
+      gap: 0;
+      text-decoration: none;
+      color: var(--secondary);
+      font-size: 0; /* el texto NO se verá */
+      text-align: center;
+    }
+    &:hover {
+      background-color: var(--background-primary-selected);
+      scale: 1.07;
+      a {
+        color: var(--primary-2);
+        font-weight: 600;
+      }
+    }
+  }
+
+  .selected {
+    background-color: var(--background-primary-selected);
+    padding: 1rem 0.5rem;
+    a {
+      color: var(--primary-2);
+      font-weight: 700;
+    }
+    &:hover {
+      scale: 1;
+      a {
+        pointer-events: none;
+        font-weight: 700;
+      }
+    }
+  }
+  .create-ticket {
+    background-color: var(--background-primary-selected-op02);
+    border-radius: 40px;
+    a {
+      color: var(--primary-2);
+    }
+  }
+  li:last-child {
+    margin-top: auto;
+    border-top: 1px solid var(--border-dark);
+
+    &:hover {
+      background-color: var(--background-red);
+      a {
+        color: red;
+      }
+    }
+  }
+}
+
+.side-navbar-none .toggle-btn {
+  rotate: 180deg; /* rotar el icono del sidebar al ocultar el panel */
+}
+
+.side-navbar-show,
+.side-navbar-none {
+  transition: width 0.3s ease, padding 0.3s ease; /* agregar fluides cuando se cierra el sidebar */
+}

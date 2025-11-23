@@ -1,0 +1,47 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+:root {
+  --primary-1: white;
+  --primary-2: #2badee; /*  color antiguo #359eff */
+  --secondary: #d1d5db;
+  --background-primary-selected: #359dff33;
+  --background-primary-selected-op02: #359dff10;
+  --background-light: #f5f7f8;
+  --background-dark: #0f1923;
+  --surface-dark: #182832; /* otra opcion #111c22 */
+  --border-dark: #325567;
+  --text-secondary-dark: #92b7c9;
+  --high-priority: #f52323;
+  --medium-priority: #f5a623;
+  --low-priority: #7ed321;
+  --background-red: #ff35351f;
+
+  /* --sidebar-width: 16.5rem; */
+}
+
+/* Estilos aplicados con JS a traves de las clases en home_sidebar */
+
+body.sidebar-open header {
+  width: calc(100% - 16.5rem);
+}
+body.sidebar-open .header-content {
+  margin-left: 16.5rem;
+}
+
+body.sidebar-closed header {
+  width: calc(100% - 6rem);
+}
+body.sidebar-closed .header-content {
+  margin-left: 6rem;
+}
+
+body {
+  display: flex;
+  background-color: var(--background-dark);
+  color: var(--primary-1);
+}
