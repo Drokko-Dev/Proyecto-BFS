@@ -71,6 +71,22 @@ main {
     color: var(--primary-1);
     font-size: 1rem;
     cursor: pointer;
+    /* transition: outline 0.1s ease; */
+
+    &:hover {
+      background-color: var(--surface-dark);
+      outline: 2px solid #1173d4;
+      outline-offset: 2px;
+    }
+    /* &:focus {
+      outline: 1px solid var(--primary-2);
+      outline-offset: 2px;
+    } */
+
+    &:focus {
+      outline: 2px solid var(--primary-2);
+      outline-offset: 2px;
+    }
   }
 
   button {
@@ -114,6 +130,10 @@ main {
       flex-direction: column;
       gap: 1rem;
 
+      &.is-hidden {
+        display: none;
+      }
+
       div:first-child {
         display: flex;
         justify-content: space-between;
@@ -148,21 +168,21 @@ main {
   }
 }
 
-.alta {
+.high {
   color: var(--primary-1);
   background-color: var(--high-priority);
   padding: 0.2rem 0.5rem;
   border-radius: 8px;
 }
 
-.media {
+.medium {
   color: var(--primary-1);
   background-color: var(--medium-priority);
   padding: 0.2rem 0.5rem;
   border-radius: 8px;
 }
 
-.baja {
+.low {
   color: var(--primary-1);
   background-color: var(--low-priority);
   padding: 0.2rem 0.5rem;

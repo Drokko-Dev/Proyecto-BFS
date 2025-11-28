@@ -381,25 +381,16 @@
           <img src="./images/perfil_demo.png" alt="" />
         </div>
         <div class="filter">
-          <select name="prioridad" id="filter-prioridad">
+          <select name="prioridad" class="filterSelect prioridad">
             <option value="">Prioridad</option>
-            <option value="Alta">Alta</option>
-            <option value="Media">Media</option>
-            <option value="Baja">Baja</option>
           </select>
 
-          <select name="fecha" id="filter-fecha">
+          <select name="date" class="filterSelect date">
             <option value="">Fecha</option>
-            <option value="18-11-2025">18-11-2025</option>
-            <option value="04-11-2025">04-11-2025</option>
-            <option value="10-10-2025">10-10-2025</option>
           </select>
 
-          <select name="usuario" id="filter-usuario">
+          <select name="assigned_to" class="filterSelect assigned_to">
             <option value="">Usuario</option>
-            <option value="User_1">User_1</option>
-            <option value="User_2">User_2</option>
-            <option value="User_3">User_3</option>
           </select>
 
           <button>
@@ -425,114 +416,12 @@
         <section class="tickets">
           <div class="new ticket">
             <h1>Nuevos</h1>
-            <article data-prioridad="alta" class="ticket-card">
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="high">Alta</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-
-            <article data-prioridad="media" class="ticket-card">
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="medium">Media</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-
-            <article data-prioridad="baja" class="ticket-card">
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="low">Baja</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
           </div>
           <div class="in-progress ticket">
             <h1>En Progreso</h1>
-            <article data-prioridad="alta" class="ticket-card">
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="high">Alta</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-
-            <article data-prioridad="media" class="ticket-card">
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="medium">Media</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-
-            <article data-prioridad="baja" class="ticket-card">
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="low">Baja</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
           </div>
           <div class="close ticket">
             <h1>Completados</h1>
-
-            <article data-prioridad="alta" class="ticket-card">
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="high">Alta</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
-
-            <article data-prioridad="media" class="ticket-card">
-              <div>
-                <h2>Problema con el login en la App</h2>
-                <span class="medium">Media</span>
-              </div>
-              <p>ID: #1025</p>
-              <div>
-                <img src="./images/perfil_demo.png" />
-                <p>Sin Asignar</p>
-                <span>Hace 2 horas</span>
-              </div>
-            </article>
           </div>
         </section>
       </main>
@@ -543,5 +432,10 @@
     <script type="module" src="../JavaScript/home_sidebar.js"></script>
     <script type="module" src="../JavaScript/home_modal.js"></script>
     <script type="module" src="../JavaScript/profile_modal.js"></script>
+    <script
+      type="module"
+      src="../JavaScript/home_main_ticket_fetch.js"
+    ></script>
+    <script type="module" src="../JavaScript/home_main_filter.js"></script>
   </body>
 </html>

@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar");
   const body = document.body;
 
+  if (!btn || !sidebar || !body) {
+    console.warn("Sidebar: algún elemento no se encontró.");
+    return;
+  }
+
   btn.addEventListener("click", () => {
     const isOpen = sidebar.classList.contains("side-navbar-show");
 
