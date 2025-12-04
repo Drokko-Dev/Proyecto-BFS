@@ -56,7 +56,7 @@ main {
   }
 }
 
-.filter {
+.filter-container {
   border-radius: 10px;
   display: flex;
   gap: 1rem;
@@ -107,6 +107,10 @@ main {
       background-color: #2b9edc;
       scale: 1.05;
     }
+  }
+  .filter {
+    display: flex;
+    gap: 10px;
   }
 }
 
@@ -187,4 +191,12 @@ main {
   background-color: var(--low-priority);
   padding: 0.2rem 0.5rem;
   border-radius: 8px;
+}
+
+@media (max-width: 1500px) {
+  .tickets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 1.5rem;
+  }
 }
