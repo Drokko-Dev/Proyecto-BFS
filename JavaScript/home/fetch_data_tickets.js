@@ -1,6 +1,7 @@
 console.log("antes del fetch");
 
 const container = document.querySelectorAll(".ticket");
+const sectionFilters = document.querySelectorAll(".filterSelect");
 
 function renderTickets(data) {
   data.forEach((ticket) => {
@@ -8,7 +9,7 @@ function renderTickets(data) {
       if (categoryTicket.classList.contains(ticket.status)) {
         const article = document.createElement("article");
         article.className = "ticket-card";
-        article.dataset.prioridad = ticket.priority;
+        article.dataset.priority = ticket.priority;
         article.dataset.date = ticket.date;
         article.dataset.assigned_to = ticket.assigned_to;
         article.innerHTML = ` 
@@ -63,11 +64,38 @@ function renderSelects(data, Array) {
   });
 }
 
+function renderSelects2(data) {
+  let filters = {};
+  sectionFilters.forEach((element) => {
+    filters[element.name] = [];
+  });
+  /* console.log(filters); */
+  for (const filter in filters) {
+    /* console.log(filter); */
+    const select = document.querySelector(`.filterSelect.${filter}`);
+    data.forEach((ticket) => {
+      filters[filter].push(ticket[filter]);
+    });
+    filter !== "priority"
+      ? (filters[filter] = [...new Set(filters[filter])].sort().reverse())
+      : (filters[filter] = [...new Set(filters[filter])]);
+
+    filters[filter].forEach((options) => {
+      const option = document.createElement("option");
+      option.textContent = options;
+      option.value = options;
+      select.appendChild(option);
+    });
+  }
+  console.log(filters);
+}
+
 fetch("../JavaScript/JSON/info_tickets.json")
   .then((response) => {
     return response.json();
   })
   .then((dataTickets) => {
     renderTickets(dataTickets.tickets);
-    renderSelects(dataTickets.tickets, ["prioridad", "date", "assigned_to"]);
+    /* renderSelects(dataTickets.tickets, ["prioridad", "date", "assigned_to"]); */
+    renderSelects2(dataTickets.tickets);
   });
