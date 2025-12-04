@@ -48,9 +48,9 @@ function renderSelects(data, Array) {
   };
   Array.forEach((filter) => {
     const select = document.querySelector(`.filterSelect.${filter}`);
-    console.log(filter);
+    /* console.log(filter); */
     for (const filterSelect in optionsSelect) {
-      console.log(filterSelect);
+      /* console.log(filterSelect); */
       if (filter === filterSelect) {
         optionsSelect[filterSelect].forEach((prioridad) => {
           const option = document.createElement("option");
