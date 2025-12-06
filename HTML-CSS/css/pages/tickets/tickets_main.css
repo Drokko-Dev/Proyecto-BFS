@@ -39,7 +39,7 @@ main {
   }
 }
 
-.filter-container {
+.filter {
   border-radius: 10px;
   display: flex;
   gap: 1rem;
