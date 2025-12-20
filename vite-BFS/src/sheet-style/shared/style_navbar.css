@@ -1,0 +1,94 @@
+/* Estilos del navbar */
+
+.header-content {
+  /* margin-left: var(--sidebar-width); */
+  height: 100vh;
+  flex: 1;
+}
+
+header,
+.header-content {
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  /* width: calc(100% - var(--sidebar-width)); */
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  background-color: var(--surface-dark);
+  border-bottom: 1px solid var(--border-dark);
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+
+    input {
+      background-color: #182832;
+      color: #8aaebf;
+      height: 40px;
+      border-radius: 0 8px 8px 0;
+      border: 1px solid #203642;
+      border-left: none;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      height: 40px;
+      width: 50px;
+      padding: 0 5px;
+      background-color: #182832;
+      border-radius: 8px 0 0 8px;
+      border: 1px solid #203642;
+      border-right: none;
+      cursor: pointer;
+    }
+
+    svg {
+      color: #92b7c9;
+    }
+  }
+
+  #open-modal {
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #182832;
+    border: 1px solid #203642;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: var(--background-primary-selected);
+    }
+
+    .bell-icon.hover {
+      display: none;
+    }
+    &:hover .bell-icon.default {
+      display: none;
+    }
+    &:hover .bell-icon.hover {
+      display: block;
+    }
+  }
+
+  img {
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}
