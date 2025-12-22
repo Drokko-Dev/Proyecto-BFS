@@ -1,6 +1,5 @@
 import { SidebarItem } from "./SidebarItem";
 import PropTypes from "prop-types";
-import { Link } from "react-router";
 import {
   HomeIcon,
   TicketIcon,
@@ -15,21 +14,37 @@ import {
 import "../../sheet-style/shared/style_sidebar.css";
 import "../../sheet-style/shared/style_sidebar_open.css";
 import "../../sheet-style/shared/style_sidebar_close.css";
+import { useState } from "react";
 
 const MENU_ITEMS = [
-  { id: "home", title: "Home", icon: HomeIcon, link:'/' },
-  { id: "tickets", title: "Tickets", icon: TicketIcon, link: '/tickets' },
-  { id: "reportes", title: "Reportes", icon: DashboardIcon, link: '/reportes' },
-  { id: "equipos", title: "Equipos", icon: TeamsIcon, link: '/equipos' },
-  { id: "crear", title: "Crear Ticket", icon: CreateTicketIcon, link: '/crear',classname: 'create-ticket' },
-  { id: "config", title: "Configuración", icon: SettingsIcon, link: '/config' },
+  { id: "home", title: "Home", icon: HomeIcon, link: "/" },
+  { id: "tickets", title: "Tickets", icon: TicketIcon, link: "/tickets" },
+  { id: "reportes", title: "Reportes", icon: DashboardIcon, link: "/reportes" },
+  { id: "equipos", title: "Equipos", icon: TeamsIcon, link: "/equipos" },
+  {
+    id: "crear",
+    title: "Crear Ticket",
+    icon: CreateTicketIcon,
+    link: "/crear",
+    classname: "create-ticket",
+  },
+  { id: "config", title: "Configuración", icon: SettingsIcon, link: "/config" },
 ];
 
 export function SideBar(props) {
+  // agregue la funcionalidad de abrir y cerrar el boton aquí pero lo ideal sería cambiar el useState por useContext, Redux o Zustand
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <>
-      <div id="sidebar" className={props.className}>
-        <button id="toggleSidebar" className="toggle-btn">
+      <div
+        id="sidebar"
+        className={isOpen ? "side-navbar-show" : "side-navbar-none"}
+      >
+        <button
+          id="toggleSidebar"
+          className="toggle-btn"
+          onClick={() => setIsOpen((previsOpen) => !previsOpen)}
+        >
           {CloseNavbar}
         </button>
         <div className="logo">
@@ -40,7 +55,13 @@ export function SideBar(props) {
         <ul className="nav-links">
           {MENU_ITEMS.map((item) => {
             return (
-              <SidebarItem key={item.id} title={item.title} icon={item.icon} link={item.link} classname={item.classname}/>
+              <SidebarItem
+                key={item.id}
+                title={item.title}
+                icon={item.icon}
+                link={item.link}
+                classname={item.classname}
+              />
             );
           })}
           <SidebarItem title={"Cerrar Sesión"} icon={LogoutIcon} />
