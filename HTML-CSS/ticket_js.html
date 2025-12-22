@@ -40,7 +40,7 @@
     />
 
     <!-- Modulos javascript -->
-    <script type="module" src="../JavaScript/home/home_main.js"></script>
+    <script type="module" src="../JavaScript/tickets/tickets_main.js"></script>
 
     <!-- Fuentes de texto -->
     <link
@@ -84,7 +84,7 @@
       </div>
       <ul class="nav-links">
         <li>
-          <a href="./home.html">
+          <a href="./home_js.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -397,8 +397,8 @@
           <input type="text" placeholder="Busca por ID o palabra clave..." />
         </div>
 
-        <div class="filter-container">
-          <select name="prioridad" class="filterSelect prioridad">
+        <div class="filter">
+          <select name="priority" class="filterSelect priority">
             <option value="">Prioridad</option>
           </select>
 
@@ -429,124 +429,7 @@
             <h1>Asignado a</h1>
             <h1>Acciones</h1>
           </div>
-          <div class="ticket">
-            <article data-prioridad="alta" class="ticket-card">
-              <p>#1025</p>
-              <h2>Problema con el login en la App</h2>
-              <div class="prioridad">
-                <span class="high"></span>
-                <span>Alta</span>
-              </div>
-
-              <span>Abierta</span>
-              <p>2024-10-01</p>
-
-              <div class="asignado">
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-              </div>
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mixpanel"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M4.5 12m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0"
-                  />
-                  <path
-                    d="M20.5 12m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0"
-                  />
-                  <path d="M13 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg
-              ></span>
-            </article>
-
-            <article data-prioridad="alta" class="ticket-card">
-              <p>#1025</p>
-              <h2>Problema con el login en la App</h2>
-              <div class="prioridad">
-                <span class="medium"></span>
-                <span>Media</span>
-              </div>
-
-              <span>Abierta</span>
-              <p>2024-10-01</p>
-
-              <div class="asignado">
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-              </div>
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mixpanel"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M4.5 12m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0"
-                  />
-                  <path
-                    d="M20.5 12m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0"
-                  />
-                  <path d="M13 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg
-              ></span>
-            </article>
-
-            <article data-prioridad="alta" class="ticket-card">
-              <p>#1025</p>
-              <h2>Problema con el login en la App</h2>
-              <div class="prioridad">
-                <span class="low"></span>
-                <span>Baja</span>
-              </div>
-
-              <span>Abierta</span>
-              <p>2024-10-01</p>
-
-              <div class="asignado">
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-              </div>
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mixpanel"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M4.5 12m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0"
-                  />
-                  <path
-                    d="M20.5 12m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0"
-                  />
-                  <path d="M13 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg
-              ></span>
-            </article>
-          </div>
+          <div class="ticket"></div>
         </section>
       </main>
     </div>

@@ -4,43 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Estilos para todas las paginas -->
-    <link rel="stylesheet" href="./css/shared/style_body.css" type="text/css" />
     <link
       rel="stylesheet"
-      href="./css/shared/style_modal.css"
+      href="/HTML-CSS/css/shared/style_body.css"
       type="text/css"
     />
     <link
       rel="stylesheet"
-      href="./css/shared/style_sidebar.css"
+      href="/HTML-CSS/css/shared/style_modal.css"
       type="text/css"
     />
     <link
       rel="stylesheet"
-      href="./css/shared/style_navbar.css"
+      href="/HTML-CSS/css/shared/style_sidebar.css"
       type="text/css"
     />
     <link
       rel="stylesheet"
-      href="./css/shared/style_profile_options.css"
+      href="/HTML-CSS/css/shared/style_navbar.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="/HTML-CSS//css/shared/style_profile_options.css"
       type="text/css"
     />
 
     <!-- Estilos especificos para esta pagina tickets -->
     <link
       rel="stylesheet"
-      href="./css/pages/tickets/tickets_main.css"
+      href="/HTML-CSS/css/pages/tickets/tickets_main.css"
       type="text/css"
     />
+
     <!-- Responsive -->
     <link
       rel="stylesheet"
-      href="./css/shared/style_responsive.css"
+      href="/HTML-CSS/css/shared/style_responsive.css"
       type="text/css"
     />
 
     <!-- Modulos javascript -->
-    <script type="module" src="../JavaScript/home/home_main.js"></script>
+    <script type="module" src="./tickets_main_react.js"></script>
 
     <!-- Fuentes de texto -->
     <link
@@ -51,6 +56,117 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
+
+    <!-- REACT -->
+
+    <!-- 1. Cargar React y ReactDOM desde CDN -->
+    <script type="module">
+      import React from "https://esm.sh/react?dev";
+      import ReactDOM from "https://esm.sh/react-dom/client?dev";
+      window.React = React;
+      window.ReactDOMClient = ReactDOM;
+    </script>
+
+    <!-- 2. ¡NOVEDAD! Cargar Babel para transformar JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 3. Nuestro código React CON JSX -->
+    <!-- 1. Cargar React y ReactDOM desde CDN -->
+    <script type="module">
+      import React from "https://esm.sh/react?dev";
+      import ReactDOM from "https://esm.sh/react-dom/client?dev";
+      window.React = React;
+      window.ReactDOMClient = ReactDOM;
+    </script>
+
+    <!-- 2. ¡NOVEDAD! Cargar Babel para transformar JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 3. Nuestro código React CON JSX -->
+    <script type="text/babel">
+      // Nuestro primer componente
+      function Saludar({ nombre, color }) {
+        const estilos = {
+          color: color,
+          fontSize: "32px",
+          fontWeight: "bold",
+          textAlign: "center",
+        };
+
+        return <h1 style={estilos}>¡Hola, {nombre}!</h1>;
+      }
+      function TicketCard({ id, title, priority, status, date, assigned_to }) {
+        return (
+          <article
+            class="ticket-card"
+            data-priority={priority}
+            data-status={status}
+            data-assigned_to={assigned_to}
+            data-date={date}
+            data-category={category}
+          >
+            <p>#{id}</p>
+            <h2>{title}</h2>
+            <div class="prioridad">
+              <span class={priority}></span>
+              <span>{priority}</span>
+            </div>
+
+            <span>{status}</span>
+            <p>{date}</p>
+
+            <div class="asignado">
+              <img src="./images/perfil_demo.png" alt="" />
+              <p>{assigned_to}</p>
+            </div>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mixpanel"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4.5 12m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0" />
+                <path d="M20.5 12m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0" />
+                <path d="M13 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              </svg>
+            </span>
+          </article>
+        );
+      }
+
+      function App() {
+        return (
+          <div class="ticket">
+            <TicketCard />
+          </div>
+        );
+      }
+
+      /* function App() {
+        return (
+          <div>
+            <Saludar nombre="Ana" color="purple" />
+            <Saludar nombre="Luis" color="green" />
+            <Saludar nombre="Carla" color="orange" />
+          </div>
+        );
+      } */
+
+      // Renderizar el componente
+      window.onload = () => {
+        const rootEl = document.querySelector("#root");
+        const root = ReactDOMClient.createRoot(rootEl);
+        root.render(<App />);
+      };
+    </script>
 
     <title>HomaPage-BFS</title>
   </head>
@@ -78,13 +194,13 @@
         </svg>
       </button>
       <div class="logo">
-        <img src="./images/TicketFlow_logo.png" alt="page logo" />
+        <img src="/HTML-CSS/images/TicketFlow_logo.png" alt="page logo" />
         <h1>TicketFlow</h1>
         <span>Gestor de Tickets</span>
       </div>
       <ul class="nav-links">
         <li>
-          <a href="./home.html">
+          <a href="./home_js.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -397,8 +513,8 @@
           <input type="text" placeholder="Busca por ID o palabra clave..." />
         </div>
 
-        <div class="filter-container">
-          <select name="prioridad" class="filterSelect prioridad">
+        <div class="filter">
+          <select name="priority" class="filterSelect priority">
             <option value="">Prioridad</option>
           </select>
 
@@ -429,124 +545,7 @@
             <h1>Asignado a</h1>
             <h1>Acciones</h1>
           </div>
-          <div class="ticket">
-            <article data-prioridad="alta" class="ticket-card">
-              <p>#1025</p>
-              <h2>Problema con el login en la App</h2>
-              <div class="prioridad">
-                <span class="high"></span>
-                <span>Alta</span>
-              </div>
-
-              <span>Abierta</span>
-              <p>2024-10-01</p>
-
-              <div class="asignado">
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-              </div>
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mixpanel"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M4.5 12m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0"
-                  />
-                  <path
-                    d="M20.5 12m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0"
-                  />
-                  <path d="M13 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg
-              ></span>
-            </article>
-
-            <article data-prioridad="alta" class="ticket-card">
-              <p>#1025</p>
-              <h2>Problema con el login en la App</h2>
-              <div class="prioridad">
-                <span class="medium"></span>
-                <span>Media</span>
-              </div>
-
-              <span>Abierta</span>
-              <p>2024-10-01</p>
-
-              <div class="asignado">
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-              </div>
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mixpanel"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M4.5 12m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0"
-                  />
-                  <path
-                    d="M20.5 12m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0"
-                  />
-                  <path d="M13 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg
-              ></span>
-            </article>
-
-            <article data-prioridad="alta" class="ticket-card">
-              <p>#1025</p>
-              <h2>Problema con el login en la App</h2>
-              <div class="prioridad">
-                <span class="low"></span>
-                <span>Baja</span>
-              </div>
-
-              <span>Abierta</span>
-              <p>2024-10-01</p>
-
-              <div class="asignado">
-                <img src="./images/perfil_demo.png" alt="" />
-                <p>Sin Asignar</p>
-              </div>
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mixpanel"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M4.5 12m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0"
-                  />
-                  <path
-                    d="M20.5 12m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0"
-                  />
-                  <path d="M13 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg
-              ></span>
-            </article>
-          </div>
+          <div id="root"></div>
         </section>
       </main>
     </div>

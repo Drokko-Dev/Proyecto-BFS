@@ -1,0 +1,16 @@
+.toggle-btn {
+  position: absolute;
+  top: 2rem;
+  right: 5px; /* sobresale un poquito hacia afuera */
+  background: none;
+  color: var(--secondary);
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+  transition: transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+  color: var(--primary-2);
+  transform: scale(1.3);
+}

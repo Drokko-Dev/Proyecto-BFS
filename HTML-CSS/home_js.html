@@ -12,11 +12,6 @@
     />
     <link
       rel="stylesheet"
-      href="./css/shared/style_responsive.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
       href="./css/shared/style_sidebar.css"
       type="text/css"
     />
@@ -37,6 +32,16 @@
       href="./css/pages/home/home_main.css"
       type="text/css"
     />
+
+    <!-- Responsive CSS -->
+    <link
+      rel="stylesheet"
+      href="./css/shared/style_responsive.css"
+      type="text/css"
+    />
+
+    <!-- Modulos javascript -->
+    <script type="module" src="../JavaScript/home/home_main.js"></script>
 
     <!-- Fuentes de texto -->
     <link
@@ -102,7 +107,7 @@
           >
         </li>
         <li>
-          <a href="./ticket.html">
+          <a href="./ticket_js.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -380,18 +385,20 @@
           </div>
           <img src="./images/perfil_demo.png" alt="" />
         </div>
-        <div class="filter">
-          <select name="prioridad" class="filterSelect prioridad">
-            <option value="">Prioridad</option>
-          </select>
+        <div class="filter-container">
+          <div class="filter">
+            <select name="priority" class="filterSelect priority">
+              <option value="">Prioridad</option>
+            </select>
 
-          <select name="date" class="filterSelect date">
-            <option value="">Fecha</option>
-          </select>
+            <select name="date" class="filterSelect date">
+              <option value="">Fecha</option>
+            </select>
 
-          <select name="assigned_to" class="filterSelect assigned_to">
-            <option value="">Usuario</option>
-          </select>
+            <select name="assigned_to" class="filterSelect assigned_to">
+              <option value="">Usuario</option>
+            </select>
+          </div>
 
           <button>
             <svg
@@ -428,14 +435,5 @@
     </div>
 
     <!-- scripts -->
-
-    <script type="module" src="../JavaScript/home_sidebar.js"></script>
-    <script type="module" src="../JavaScript/home_modal.js"></script>
-    <script type="module" src="../JavaScript/profile_modal.js"></script>
-    <script
-      type="module"
-      src="../JavaScript/home_main_ticket_fetch.js"
-    ></script>
-    <script type="module" src="../JavaScript/home_main_filter.js"></script>
   </body>
 </html>
