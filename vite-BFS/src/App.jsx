@@ -10,7 +10,6 @@ import { useLocation } from "react-router";
 
 export function App() {
   const location = useLocation();
-  console.log(location);
 
   return (
     <>
