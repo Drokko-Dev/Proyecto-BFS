@@ -34,7 +34,16 @@ const MENU_ITEMS = [
 
 export function SideBar(props) {
   // agregue la funcionalidad de abrir y cerrar el boton aquí pero lo ideal sería cambiar el useState por useContext, Redux o Zustand
-  const {isOpen, toggleOpen} = useSidebar();
+  const { isOpen, toggleOpen } = useSidebar();
+  const itemsLi = MENU_ITEMS.map((item) => (
+    <SidebarItem
+      key={item.id}
+      title={item.title}
+      icon={item.icon}
+      link={item.link}
+      classname={item.classname}
+    />
+  ));
   return (
     <>
       <div
@@ -54,17 +63,7 @@ export function SideBar(props) {
           <span>Gestor de Tickets</span>
         </div>
         <ul className="nav-links">
-          {MENU_ITEMS.map((item) => {
-            return (
-              <SidebarItem
-                key={item.id}
-                title={item.title}
-                icon={item.icon}
-                link={item.link}
-                classname={item.classname}
-              />
-            );
-          })}
+          {itemsLi}
           <SidebarItem title={"Cerrar Sesión"} icon={LogoutIcon} />
         </ul>
       </div>
