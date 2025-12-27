@@ -1,3 +1,5 @@
+import { useContext, useState } from "react";
+import { useSidebar } from "../../hooks/useSidebar";
 import { SidebarItem } from "./SidebarItem";
 import PropTypes from "prop-types";
 import {
@@ -15,11 +17,35 @@ import "../../sheet-style/shared/style_sidebar.css";
 import "../../sheet-style/shared/style_sidebar_open.css";
 import "../../sheet-style/shared/style_sidebar_close.css";
 
+const MENU_ITEMS = [
+  { id: "home", title: "Home", icon: HomeIcon, link: "/" },
+  { id: "tickets", title: "Tickets", icon: TicketIcon, link: "/tickets" },
+  { id: "reportes", title: "Reportes", icon: DashboardIcon, link: "/reportes" },
+  { id: "equipos", title: "Equipos", icon: TeamsIcon, link: "/equipos" },
+  {
+    id: "crear",
+    title: "Crear Ticket",
+    icon: CreateTicketIcon,
+    link: "/crear",
+    classname: "create-ticket",
+  },
+  { id: "config", title: "Configuración", icon: SettingsIcon, link: "/config" },
+];
+
 export function SideBar(props) {
+  // agregue la funcionalidad de abrir y cerrar el boton aquí pero lo ideal sería cambiar el useState por useContext, Redux o Zustand
+  const {isOpen, toggleOpen} = useSidebar();
   return (
     <>
-      <div id="sidebar" className={props.className}>
-        <button id="toggleSidebar" className="toggle-btn">
+      <div
+        id="sidebar"
+        className={isOpen ? "side-navbar-show" : "side-navbar-none"}
+      >
+        <button
+          id="toggleSidebar"
+          className="toggle-btn"
+          onClick={() => toggleOpen()}
+        >
           {CloseNavbar}
         </button>
         <div className="logo">
@@ -28,20 +54,17 @@ export function SideBar(props) {
           <span>Gestor de Tickets</span>
         </div>
         <ul className="nav-links">
-          <SidebarItem
-            title={"Inicio"}
-            icon={HomeIcon}
-            className={"selected"}
-          />
-          <SidebarItem title={"Tickets"} icon={TicketIcon} />
-          <SidebarItem title={"Reportes"} icon={DashboardIcon} />
-          <SidebarItem title={"Equipos"} icon={TeamsIcon} />
-          <SidebarItem
-            title={"Crear Ticket"}
-            className={"create-ticket"}
-            icon={CreateTicketIcon}
-          />
-          <SidebarItem title={"Configuración"} icon={SettingsIcon} />
+          {MENU_ITEMS.map((item) => {
+            return (
+              <SidebarItem
+                key={item.id}
+                title={item.title}
+                icon={item.icon}
+                link={item.link}
+                classname={item.classname}
+              />
+            );
+          })}
           <SidebarItem title={"Cerrar Sesión"} icon={LogoutIcon} />
         </ul>
       </div>
