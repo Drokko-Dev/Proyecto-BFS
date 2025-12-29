@@ -63,27 +63,33 @@
       }
     }
   }
-
+  .create-ticket {
+    background-color: var(--background-primary-selected-op02);
+    border-radius: 40px;
+    a {
+      color: var(--primary-2);
+    }
+  }
   .selected {
     background-color: var(--background-primary-selected);
-    padding: 1rem 0.5rem;
+    padding: 0.9rem 0.5rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: calc(0.5rem + 1rem);
+    padding-right: calc(0.5rem + 1rem);
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     a {
       color: var(--primary-2);
       font-weight: 700;
     }
     &:hover {
       transform: scale(1);
+
       a {
         pointer-events: none;
         font-weight: 700;
       }
-    }
-  }
-  .create-ticket {
-    background-color: var(--background-primary-selected-op02);
-    border-radius: 40px;
-    a {
-      color: var(--primary-2);
     }
   }
   li:last-child {
