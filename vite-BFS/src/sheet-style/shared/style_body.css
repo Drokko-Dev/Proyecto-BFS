@@ -26,7 +26,7 @@
 
 /* Estilos aplicados con JS a traves de las clases en home_sidebar */
 
-body.sidebar-open header {
+/* body.sidebar-open header {
   width: calc(100% - 16.5rem);
 }
 body.sidebar-open .header-content {
@@ -38,7 +38,7 @@ body.sidebar-closed header {
 }
 body.sidebar-closed .header-content {
   margin-left: 6rem;
-}
+} */
 
 body {
   display: flex;

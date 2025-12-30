@@ -7,6 +7,8 @@ import { CreateTicketPage } from "./pages/CreateTicketPage";
 import { ConfigPage } from "./pages/ConfigPage";
 import { Routes, Route } from "react-router";
 import { useLocation } from "react-router";
+import "./sheet-style/shared/style_body.css";
+import "./sheet-style/shared/style_responsive.css";
 
 export function App() {
   const location = useLocation();
