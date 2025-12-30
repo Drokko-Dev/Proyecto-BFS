@@ -112,9 +112,13 @@
 .side-navbar-none {
   transition: width 0.3s ease, width 0.3s ease, padding 0.3s ease; /* agregar fluides cuando se cierra el sidebar */
   h1 {
-    transition: font-size 0.2s ease;
+    transition: font-size 0.15s;
   }
   span {
-    transition: font-size 0.2s ease;
+    transition: font-size 0.15s;
   }
+}
+.side-navbar-show h1,
+.side-navbar-show span {
+  transition-delay: 0.15s;
 }
