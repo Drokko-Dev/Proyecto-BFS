@@ -70,13 +70,12 @@ export function Navbar() {
       <div className="search-box">
         <button>{Icons.SearchIcon}</button>
         <input type="text" placeholder="Busca ticket..." />
-        <button id="open-modal"></button>
+        <button id="open-modal">
+          {Icons.AlertOpen}
+          {Icons.AlertOpenHover}
+        </button>
         <div className="profile">
-          <img
-            src="./images/perfil_demo.png"
-            alt="profile picture"
-            id="profile"
-          />
+          <img src="./public/Profile1.png" alt="profile picture" id="profile" />
         </div>
       </div>
     </header>

@@ -1,18 +1,8 @@
 /*! Estilos para la barra de navegacion lateral cuando esta ABIERTA */
 
 .side-navbar-show {
-  position: fixed;
-  top: 0;
-  left: 0;
-  --sidebar-width: 16.5rem;
-  width: var(--sidebar-width);
-  height: 100vh;
-  padding: 1rem;
-  background-color: var(--surface-dark);
+  width: 16.5rem;
   border-right: 1px solid var(--border-dark);
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 .side-navbar-show .logo {
@@ -35,82 +25,25 @@
   }
   span {
     grid-area: texto;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     align-self: start;
     color: var(--text-secondary-dark);
   }
 }
 
 .side-navbar-show .nav-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 2rem;
-
   li {
-    padding: 0.75rem 0.5rem;
     border-radius: 1rem;
-    transition: transform 0.2s ease;
 
     a {
-      display: flex;
-      align-items: center;
       gap: 1rem;
-      text-decoration: none;
-      color: var(--secondary);
       font-size: 1.4rem;
-      cursor: pointer;
+      /* cursor: pointer; */
       transition: font-size 0.15s ease 0.15s;
-    }
-    &:hover {
-      background-color: var(--background-primary-selected);
-      transform: scale(1.07);
-      a {
-        color: var(--primary-2);
-        font-weight: 600;
-      }
     }
   }
 
   .create-ticket {
-    background-color: var(--background-primary-selected-op02);
     border-radius: 50px;
-    a {
-      color: var(--primary-2);
-    }
-  }
-
-  .selected {
-    background-color: var(--background-primary-selected);
-    padding: 0.9rem 0.5rem;
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: calc(0.5rem + 1rem);
-    padding-right: calc(0.5rem + 1rem);
-    border-radius: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    a {
-      color: var(--primary-2);
-      font-weight: 700;
-    }
-    &:hover {
-      transform: scale(1);
-
-      a {
-        pointer-events: none;
-        font-weight: 700;
-      }
-    }
-  }
-  li:last-child {
-    margin-top: auto;
-    border-top: 1px solid var(--border-dark);
-    &:hover {
-      background-color: var(--background-red);
-      a {
-        color: red;
-      }
-    }
   }
 }

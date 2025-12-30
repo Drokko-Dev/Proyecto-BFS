@@ -4,9 +4,9 @@ import { SidebarItem } from "./SidebarItem";
 import PropTypes from "prop-types";
 import * as Icons from "../../assets/svg/svg";
 
-import "../../sheet-style/shared/style_sidebar.css";
 import "../../sheet-style/shared/style_sidebar_open.css";
 import "../../sheet-style/shared/style_sidebar_close.css";
+import "../../sheet-style/shared/style_sidebar.css";
 
 const MENU_ITEMS = [
   {
@@ -96,5 +96,5 @@ export function SideBar(props) {
 }
 
 SideBar.propTypes = {
-  className: PropTypes.string.isRequired,
+  classname: PropTypes.string.isRequired,
 };
