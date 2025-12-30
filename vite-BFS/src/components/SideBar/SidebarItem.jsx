@@ -1,15 +1,17 @@
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router";
 
-export function SidebarItem({link, icon, title, classname}) {
+export function SidebarItem(props) {
   const location = useLocation();
   return (
-    <li className={`${classname} ${(location.pathname === link)? 'selected' : ''}`}>
-      <Link
-        to={link}
-      >
-        {icon}
-        {title}
+    <li
+      className={`${props.classname} ${
+        location.pathname === props.link ? "selected" : ""
+      }`}
+    >
+      <Link to={props.link}>
+        {props.icon}
+        {props.title}
       </Link>
     </li>
   );
