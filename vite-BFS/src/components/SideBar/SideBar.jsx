@@ -2,64 +2,12 @@ import { useContext, useState } from "react";
 import { useSidebar } from "../../hooks/useSidebar";
 import { SidebarItem } from "./SidebarItem";
 import PropTypes from "prop-types";
+import { MENU_ITEMS } from "../MenuItems.jsx";
 import * as Icons from "../../assets/svg/svg";
 
 import "../../sheet-style/shared/style_sidebar_open.css";
 import "../../sheet-style/shared/style_sidebar_close.css";
 import "../../sheet-style/shared/style_sidebar.css";
-
-const MENU_ITEMS = [
-  {
-    id: "home",
-    titleMenu: "Home",
-    titlePage: "Dashboard",
-    icon: Icons.HomeIcon,
-    link: "/",
-  },
-  {
-    id: "tickets",
-    titleMenu: "Tickets",
-    titlePage: "Gestión de Tickets",
-    icon: Icons.TicketIcon,
-    link: "/tickets",
-  },
-  {
-    id: "reportes",
-    titleMenu: "Reportes",
-    titlePage: "Reportes y Métricas",
-    icon: Icons.DashboardIcon,
-    link: "/reportes",
-  },
-  {
-    id: "equipos",
-    titleMenu: "Equipos",
-    titlePage: "Equipos de Trabajo",
-    icon: Icons.TeamsIcon,
-    link: "/equipos",
-  },
-  {
-    id: "crear",
-    titleMenu: "Crear Ticket",
-    titlePage: "Nuevo Ticket",
-    icon: Icons.CreateTicketIcon,
-    link: "/crear",
-    classname: "create-ticket",
-  },
-  {
-    id: "config",
-    titleMenu: "Configuración",
-    titlePage: "Configuración",
-    icon: Icons.SettingsIcon,
-    link: "/config",
-  },
-  {
-    id: "logout",
-    titleMenu: "Cerrar Sesión",
-    titlePage: "",
-    icon: Icons.LogoutIcon,
-    link: "",
-  },
-];
 
 export function SideBar(props) {
   // agregue la funcionalidad de abrir y cerrar el boton aquí pero lo ideal sería cambiar el useState por useContext, Redux o Zustand
