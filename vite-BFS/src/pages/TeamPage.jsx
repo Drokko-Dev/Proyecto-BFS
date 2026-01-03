@@ -6,6 +6,7 @@ export function TeamPage() {
     <>
       <Navbar />
       <SideBar />
+      <ProfileMenu/>
     </>
   );
 }
