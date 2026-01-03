@@ -203,3 +203,59 @@ export const CloseAlert = (
     <path d="M18 6 6 18M6 6l12 12" />
   </svg>
 );
+
+export const UserCircle = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    fill="none"
+    stroke="black"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-user-circle"
+    viewBox="0 0 24 24"
+  >
+    <path fill="none" stroke="none" d="M0 0h24v24H0z" />
+    <path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0" />
+    <path d="M9 10a3 3 0 1 0 6 0 3 3 0 1 0-6 0m-2.832 8.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855" />
+  </svg>
+);
+
+export const Edit = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    stroke="black"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-edit"
+    viewBox="0 0 24 24"
+  >
+    <path fill="none" stroke="none" d="M0 0h24v24H0z" />
+    <path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1" />
+    <path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3zM16 5l3 3" />
+  </svg>
+);
+
+export const Message = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    stroke="black"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-message"
+    viewBox="0 0 24 24"
+  >
+    <path fill="none" stroke="none" d="M0 0h24v24H0z" />
+    <path d="M8 9h8m-8 4h6m4-9a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-5l-5 3v-3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z" />
+  </svg>
+);
