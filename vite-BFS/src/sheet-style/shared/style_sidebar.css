@@ -12,7 +12,7 @@
 
 .side-navbar-none .toggle-btn {
   position: absolute;
-  top: 22px;
+  top: 1.5rem;
   right: -6px; /* sobresale un poquito hacia afuera */
   background: none;
   color: var(--secondary);
@@ -37,6 +37,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  overflow-x: hidden;
 }
 
 #sidebar .nav-links {
