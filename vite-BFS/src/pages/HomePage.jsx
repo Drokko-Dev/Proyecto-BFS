@@ -6,6 +6,7 @@ export function HomePage() {
     <>
       <Navbar />
       <SideBar />
+      <ProfileMenu/>
     </>
   );
 }

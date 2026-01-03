@@ -6,6 +6,7 @@ export function ReportPage() {
     <>
       <Navbar />
       <SideBar />
+      <ProfileMenu/>
     </>
   );
 }
