@@ -1,3 +1,30 @@
+#open-modal {
+  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #182832;
+  border: 1px solid #203642;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--background-primary-selected);
+  }
+
+  .bell-icon.hover {
+    display: none;
+  }
+  &:hover .bell-icon.default {
+    display: none;
+  }
+  &:hover .bell-icon.hover {
+    display: block;
+  }
+}
+
 .modal-alerta {
   position: fixed;
   top: 0;
@@ -37,16 +64,29 @@
 }
 
 /* Botón cerrar */
-.close-button {
-  position: absolute;
-  top: 14px;
-  right: 16px;
+.close-button-modal {
+  background: none;
+  border: none;
+  border-radius: none;
   cursor: pointer;
-  color: var(--primary-1);
+  position: absolute;
+  top: 20px;
+  right: 25px;
   display: flex;
   transition: 0.2s;
-  width: 1.5rem;
-  height: 1.5rem;
+  svg {
+    color: var(--primary-1);
+    transition: 0.2s;
+  }
+  /* width: 1.5rem;
+  height: 1.5rem; */
+}
+
+.close-button-modal:hover {
+  svg {
+    color: #ff4d4d;
+    transform: scale(1.2);
+  }
 }
 
 /* Título */
@@ -56,11 +96,6 @@
   font-weight: 700;
   color: var(--primary-1);
   margin-bottom: 15px;
-}
-
-.close-button:hover {
-  color: #ff4d4d;
-  transform: scale(1.2);
 }
 
 /* Listas */

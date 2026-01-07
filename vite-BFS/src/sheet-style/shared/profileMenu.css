@@ -1,5 +1,10 @@
+.profile {
+  background: none;
+  border: none;
+}
 #profile {
   cursor: pointer;
+  background: none;
 }
 
 .menu {
@@ -15,16 +20,17 @@
   visibility: hidden;
   opacity: 0;
 }
+
 .botonImagen {
-    border: 1px solid white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    position: absolute;
-    right: 30px;
-    top: 9px;
-    background-color: transparent;
-  }
+  border: 1px solid white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  right: 30px;
+  top: 9px;
+  background-color: transparent;
+}
 
 .menu.active {
   top: 65px;

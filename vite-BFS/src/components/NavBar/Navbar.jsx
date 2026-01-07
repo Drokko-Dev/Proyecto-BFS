@@ -1,10 +1,12 @@
 import { useSidebar } from "../../hooks/useSidebar";
 import { useLocation } from "react-router";
-
+import { AlertModal } from "./AlertModal.jsx";
+import { ProfileMenu } from "../ProfileMenu.jsx";
 import { MENU_ITEMS } from "../MenuItems.jsx";
 import * as Icons from "../../assets/svg/svg";
 
 import "../../sheet-style/shared/style_navbar.css";
+import "../../sheet-style/shared/style_modal.css";
 
 export function Navbar() {
   const { isOpen } = useSidebar();
@@ -18,15 +20,10 @@ export function Navbar() {
     <header className={isOpen ? "navbar-open" : "navbar-closed"}>
       <h1>{getTitleFromPath(location.pathname)}</h1>
       <div className="search-box">
-        <button>{Icons.SearchIcon}</button>
+        <button className="search-button">{Icons.SearchIcon}</button>
         <input type="text" placeholder="Busca ticket..." />
-        <button id="open-modal">
-          {Icons.AlertOpen}
-          {Icons.AlertOpenHover}
-        </button>
-        <div className="profile">
-          <img src="./public/Profile1.png" alt="profile picture" id="profile" />
-        </div>
+        <AlertModal />
+        <ProfileMenu />
       </div>
     </header>
   );

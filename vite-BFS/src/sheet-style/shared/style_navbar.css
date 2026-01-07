@@ -56,7 +56,7 @@ header {
       }
     }
 
-    button {
+    .search-button {
       height: 40px;
       width: 50px;
       padding: 0 5px;
@@ -69,32 +69,6 @@ header {
 
     svg {
       color: #92b7c9;
-    }
-  }
-
-  #open-modal {
-    margin-left: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: #182832;
-    border: 1px solid #203642;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-      background-color: var(--background-primary-selected);
-    }
-
-    .bell-icon.hover {
-      display: none;
-    }
-    &:hover .bell-icon.default {
-      display: none;
-    }
-    &:hover .bell-icon.hover {
-      display: block;
     }
   }
 
