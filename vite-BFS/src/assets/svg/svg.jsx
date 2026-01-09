@@ -245,17 +245,13 @@ export const Edit = (
 export const Message = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width={24}
+    height={24}
     fill="none"
-    stroke="black"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth="2"
-    class="icon icon-tabler icons-tabler-outline icon-tabler-message"
-    viewBox="0 0 24 24"
+    stroke="#000"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-message"
   >
-    <path fill="none" stroke="none" d="M0 0h24v24H0z" />
+    <path stroke="none" d="M0 0h24v24H0z" />
     <path d="M8 9h8m-8 4h6m4-9a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-5l-5 3v-3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z" />
   </svg>
 );
