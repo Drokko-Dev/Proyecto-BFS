@@ -1,4 +1,5 @@
 import { HomePageHeader } from "./HomePageHeader.jsx";
+import { HomePageFilterContainer } from "./HomePageFilterContainer.jsx";
 import { useSidebar } from "../../hooks/useSidebar";
 import "../../sheet-style/pages/home/home_main.css";
 
@@ -9,6 +10,7 @@ export function HomePageContent() {
     <div className={`homePageContent ${sidebarClass}`}>
       <main>
         <HomePageHeader />
+        <HomePageFilterContainer />
       </main>
     </div>
   );
