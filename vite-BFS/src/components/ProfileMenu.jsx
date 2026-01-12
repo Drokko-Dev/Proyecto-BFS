@@ -1,29 +1,17 @@
-import { use, useEffect, useRef, useState } from "react";
 import "../sheet-style/shared/profileMenu.css";
 import { Edit, Message, UserCircle } from "../assets/svg/svg";
+import { useProfile } from "../hooks/useProfiler";
+
 
 export function ProfileMenu() {
-  const menuRef = useRef(null);
-  const [isOpen, setIsOpen] = useState(false);
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  const { menuRef, isProfileOpen, setIsProfileOpen} = useProfile()
   return (
     <div ref={menuRef}>
       <button
         className="botonImagen"
-        onClick={(preOpen) => setIsOpen(!isOpen)}
+        onClick={() => setIsProfileOpen(!isProfileOpen)}
       ></button>
-      {isOpen && (
+      {isProfileOpen && (
         <div className="menu active" id="menu" >
           <h3>
             Jaime Vega
