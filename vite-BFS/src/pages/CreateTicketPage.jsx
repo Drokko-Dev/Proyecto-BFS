@@ -6,7 +6,6 @@ export function CreateTicketPage() {
     <>
       <Navbar />
       <SideBar />
-      <ProfileMenu/>
     </>
   );
 }

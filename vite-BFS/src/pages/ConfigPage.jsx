@@ -7,7 +7,6 @@ export function ConfigPage() {
     <>
       <Navbar />
       <SideBar />
-      <ProfileMenu/>
     </>
   );
 }

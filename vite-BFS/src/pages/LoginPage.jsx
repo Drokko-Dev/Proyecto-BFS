@@ -6,7 +6,6 @@ export function LoginPage() {
     <>
       <Navbar />
       <SideBar />
-      <ProfileMenu/>
     </>
   );
 }
