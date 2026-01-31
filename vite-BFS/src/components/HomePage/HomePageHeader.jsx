@@ -7,7 +7,7 @@ export function HomePageHeader() {
         <p>Ticket de alta prioridad #1025 fue actualizado.</p>
         <button>Ver</button>
       </div>
-      <img src="/perfil_demo.png" alt="" />
+      <img src="/img/perfil_demo.png" alt="" />
     </div>
   );
 }

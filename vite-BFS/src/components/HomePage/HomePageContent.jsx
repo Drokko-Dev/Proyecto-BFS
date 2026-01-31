@@ -1,5 +1,6 @@
 import { HomePageHeader } from "./HomePageHeader.jsx";
 import { HomePageFilterContainer } from "./HomePageFilterContainer.jsx";
+import { HomePageCategoryTicket } from "./HomePageCategoryTicket.jsx";
 import { useSidebar } from "../../hooks/useSidebar";
 import "../../sheet-style/pages/home/home_main.css";
 
@@ -11,6 +12,7 @@ export function HomePageContent() {
       <main>
         <HomePageHeader />
         <HomePageFilterContainer />
+        <HomePageCategoryTicket />
       </main>
     </div>
   );

@@ -34,7 +34,7 @@ export function SideBar(props) {
         {Icons.CloseNavbar}
       </button>
       <div className="logo">
-        <img src="./TicketFlow_logo.png" alt="page logo" />
+        <img src="/img/TicketFlow_logo.png" alt="page logo" />
         <h1>TicketFlow</h1>
         <span>Gestor de Tickets</span>
       </div>

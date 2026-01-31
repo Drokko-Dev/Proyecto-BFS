@@ -30,7 +30,7 @@ export function ProfileMenu() {
         className="profile"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <img src="/Profile1.png" alt="profile picture" id="profile" />
+        <img src="/img/Profile1.png" alt="profile picture" id="profile" />
       </button>
       <div ref={menuRef}>
         {isOpen && (
