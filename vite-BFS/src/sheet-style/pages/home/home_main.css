@@ -4,7 +4,9 @@
   display: flex;
 
   margin-top: 5rem;
-  transition: margin-left 0.3s ease, width 0.3s ease;
+  transition:
+    margin-left 0.3s ease,
+    width 0.3s ease;
 }
 
 .sidebar-open {
@@ -119,7 +121,9 @@ main {
     color: var(--primary-1);
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.2s, scale 0.2s;
+    transition:
+      background-color 0.2s,
+      scale 0.2s;
     display: flex;
     align-items: center;
     gap: 0.5rem;

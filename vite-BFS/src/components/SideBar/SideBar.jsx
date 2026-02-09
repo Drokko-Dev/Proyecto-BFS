@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useSidebar } from "../../hooks/useSidebar";
+import { useGlobal } from "../../context/GobalContext.jsx";
 import { SidebarItem } from "./SidebarItem";
 import PropTypes from "prop-types";
 import { MENU_ITEMS } from "../MenuItems.jsx";
@@ -11,7 +11,7 @@ import "../../sheet-style/shared/style_sidebar.css";
 
 export function SideBar(props) {
   // agregue la funcionalidad de abrir y cerrar el boton aquí pero lo ideal sería cambiar el useState por useContext, Redux o Zustand
-  const { isOpen, toggleOpen } = useSidebar();
+  const { isOpenSidebar, toggleOpenSidebar } = useGlobal();
   const itemsLi = MENU_ITEMS.map((item) => (
     <SidebarItem
       key={item.id}
@@ -24,12 +24,12 @@ export function SideBar(props) {
   return (
     <div
       id="sidebar"
-      className={isOpen ? "side-navbar-show" : "side-navbar-none"}
+      className={isOpenSidebar ? "side-navbar-show" : "side-navbar-none"}
     >
       <button
         id="toggleSidebar"
         className="toggle-btn"
-        onClick={() => toggleOpen()}
+        onClick={() => toggleOpenSidebar()}
       >
         {Icons.CloseNavbar}
       </button>

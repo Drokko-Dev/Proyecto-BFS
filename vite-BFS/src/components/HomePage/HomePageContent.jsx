@@ -1,17 +1,17 @@
 import { HomePageHeader } from "./HomePageHeader.jsx";
-import { HomePageFilterContainer } from "./HomePageFilterContainer.jsx";
+import { HomePageFilter } from "./HomePageFilter.jsx";
 import { HomePageCategoryTicket } from "./HomePageCategoryTicket.jsx";
-import { useSidebar } from "../../hooks/useSidebar";
+import { useGlobal } from "../../context/GobalContext.jsx";
 import "../../sheet-style/pages/home/home_main.css";
 
 export function HomePageContent() {
-  const { isOpen } = useSidebar();
-  const sidebarClass = isOpen ? "sidebar-open" : "sidebar-closed";
+  const { isOpenSidebar } = useGlobal();
+  const sidebarClass = isOpenSidebar ? "sidebar-open" : "sidebar-closed";
   return (
     <div className={`homePageContent ${sidebarClass}`}>
       <main>
         <HomePageHeader />
-        <HomePageFilterContainer />
+        <HomePageFilter />
         <HomePageCategoryTicket />
       </main>
     </div>
