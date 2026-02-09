@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import * as Icons from "../../assets/svg/svg";
+import "../../sheet-style/shared/style_modal.css";
 
 export function AlertModal() {
   const menuRef = useRef(null);
@@ -16,7 +17,6 @@ export function AlertModal() {
     };
     if (showAlert) {
       document.addEventListener("mousedown", handleClickOutside);
-      console.log(menuRef.current);
     }
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);

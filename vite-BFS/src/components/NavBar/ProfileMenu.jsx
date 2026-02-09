@@ -1,6 +1,6 @@
-import { use, useEffect, useRef, useState } from "react";
-import "../sheet-style/shared/profileMenu.css";
-import { Edit, Message, UserCircle } from "../assets/svg/svg";
+import { useEffect, useRef, useState } from "react";
+import { Edit, Message, UserCircle } from "../../assets/svg/svg";
+import "../../sheet-style/shared/profileMenu.css";
 
 export function ProfileMenu() {
   const menuRef = useRef(null);
@@ -30,7 +30,7 @@ export function ProfileMenu() {
         className="profile"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <img src="./public/Profile1.png" alt="profile picture" id="profile" />
+        <img src="/img/Profile1.png" alt="profile picture" id="profile" />
       </button>
       <div ref={menuRef}>
         {isOpen && (

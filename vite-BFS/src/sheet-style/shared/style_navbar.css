@@ -1,15 +1,9 @@
 /*! Estilos del navbar */
 
-.header-content {
-  /* margin-left: var(--sidebar-width); */
+/* .header-content {
   height: 100vh;
   flex: 1;
-}
-
-header,
-.header-content {
-  transition: margin-left 0.3s ease, width 0.3s ease;
-}
+} */
 
 .navbar-open {
   margin-left: 16.5rem;

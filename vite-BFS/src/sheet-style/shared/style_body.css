@@ -41,7 +41,7 @@ body.sidebar-closed .header-content {
 } */
 
 body {
-  display: flex;
+  /* display: flex; */
   background-color: var(--background-dark);
   color: var(--primary-1);
 }
