@@ -81,6 +81,23 @@
     border-radius: 10px;
     display: flex;
     gap: 1rem;
+    align-items: center;
+    button {
+      background: none;
+      border: none;
+      color: var(--primary-1);
+      svg {
+        cursor: pointer;
+        transition:
+          color 0.2s ease,
+          transform 0.2s ease;
+        transform: scale(1.3);
+        &:hover {
+          color: red;
+          transform: scale(1.4);
+        }
+      }
+    }
 
     select {
       padding: 0.8rem 1rem;
@@ -109,7 +126,7 @@
         outline-offset: 2px;
       }
     }
-
+    /* 
     button {
       margin-left: auto;
       padding: 0.8rem 1rem;
@@ -130,7 +147,7 @@
         background-color: #2b9edc;
         scale: 1.05;
       }
-    }
+    } */
     .filter {
       display: flex;
       gap: 10px;
